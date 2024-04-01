@@ -5,7 +5,7 @@ export default function Home() {
     <div className="flex gap-32 w-[100vw] h-[100vh] bg-[#fff] xs:max-md:block xs:max-md:h-[140vh]">
       <div className="flex flex-col gap-10 w-[40vw] pt-[8rem] pl-[10rem] xs:max-md:pl-[0rem] xs:max-md:items-center xs:max-md:w-[100vw] xs:max-md:pt-[10rem]">
         <h1 className="text-[35px] text-[#1A3C86] text-left font-medium tracking-wide mb-[-2rem] xs:max-md:text-[18px] xs:max-md:text-center">
-          We're almost there
+          We&apos;re almost there
         </h1>
         <h1 className="text-[150px] text-black text-left font-semibold leading-[7.9rem] tracking-wider ml-[-0.8rem] xs:max-md:text-[45px] xs:max-md:font-extrabold xs:max-md:leading-[2.5rem] xs:max-md:ml-[0rem] xs:max-md:text-center">
           Coming Soon
