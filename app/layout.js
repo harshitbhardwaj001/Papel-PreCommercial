@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <img
           src="/papel-llogoo.png"
           alt="logo"
-          className="absolute top-8 w-[50px] left-12 xs:max-md:w-[80px] xs:max-md:left-[9rem]"
+          className="absolute top-8 w-[50px] left-12 xs:max-md:w-[80px] xs:max-md:relative xs:max-md:mx-auto xs:max-md:top-[40px] xs:max-md:left-0"
         />
         {children}
       </body>

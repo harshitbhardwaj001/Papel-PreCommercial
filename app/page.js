@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex gap-32 w-[100vw] h-[100vh] bg-[#fff] xs:max-md:block xs:max-md:h-[140vh]">
-      <div className="flex flex-col gap-10 w-[40vw] pt-[8rem] pl-[10rem] xs:max-md:pl-[0rem] xs:max-md:items-center xs:max-md:w-[100vw] xs:max-md:pt-[10rem]">
+    <div className="flex gap-32 w-[100vw] h-[100vh] bg-[#fff] xs:max-md:block xs:max-md:h-auto">
+      <div className="flex flex-col gap-10 w-[40vw] pt-[8rem] pl-[10rem] xs:max-md:pl-[0rem] xs:max-md:items-center xs:max-md:w-[100vw] xs:max-md:pt-[5rem]">
         <h1 className="text-[35px] text-[#1A3C86] text-left font-medium tracking-wide mb-[-2rem] xs:max-md:text-[18px] xs:max-md:text-center">
           We&apos;re almost there
         </h1>
@@ -11,17 +11,13 @@ export default function Home() {
           Coming Soon
         </h1>
         <div className="md:hidden">
-          <img
-            src="/TestImg.png"
-            alt="sample"
-            className="w-[420px] mt-[-2rem]"
-          />
+          <img src="/bottleFinal.png" alt="sample" className="w-[520px] " />
         </div>
         <p className="text-black text-[18px] xs:max-md:text-[15px] xs:max-md:text-center xs:max-md:w-[80vw]">
           Join our newsletter to be the first to know when our website launches
           and receive updates on every upcoming news.
         </p>
-        <div className="flex gap-5 xs:max-md:items-center xs:max-md:gap-3">
+        <div className="flex gap-5 xs:max-md:items-center xs:max-md:gap-3 xs:max-md:mb-[5rem]">
           <input
             type="email"
             placeholder="Enter your email address"
