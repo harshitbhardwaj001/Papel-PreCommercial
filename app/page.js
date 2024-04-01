@@ -11,7 +11,11 @@ export default function Home() {
           Coming Soon
         </h1>
         <div className="md:hidden">
-          <img src="/bottleFinal.png" alt="sample" className="w-[520px] " />
+          <img
+            src="/character-with-product-1.png"
+            alt="sample"
+            className="w-[520px] "
+          />
         </div>
         <p className="text-black text-[18px] xs:max-md:text-[15px] xs:max-md:text-center xs:max-md:w-[80vw]">
           Join our newsletter to be the first to know when our website launches
@@ -29,7 +33,7 @@ export default function Home() {
         </div>
       </div>
       <div className="overflow-hidden xs:max-md:hidden">
-        <img src="/TestImg.png" alt="sample" />
+        <img src="/character-with-product-1.png" alt="sample" />
       </div>
     </div>
   );
