@@ -41,7 +41,7 @@ const page = () => {
             within these Terms of Use by reference.
           </p>
           <h1 className="text-[22px] font-bold mt-[3rem]">
-            PAPEL WATER's Service
+            PAPEL WATER&apos;s Service
           </h1>
           <p className="text-[#1A3C86] text-[1.1rem] ">
             This web site and the services provided to you on and via this web
