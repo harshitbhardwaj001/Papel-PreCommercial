@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroBanner = () => {
@@ -25,11 +26,11 @@ const HeroBanner = () => {
           reality!
         </p>
         <div>
-          <a href="#product">
+          <Link href="#product">
             <button className="bg-[#1B3C87] w-[12rem] py-[0.5rem] rounded-full text-white text-[28px] font-extrabold mt-[1.4rem] xs:max-md:w-[32vw] xs:max-md:text-[18px] xs:max-md:py-[0.3rem]">
               BUY NOW
             </button>
-          </a>
+          </Link>
         </div>
         <Image
           src="/wave-design-1.png"
