@@ -27,7 +27,7 @@ const HeroBanner = () => {
         <div>
           <a href="#product">
             <button className="bg-[#1B3C87] w-[12rem] py-[0.5rem] rounded-full text-white text-[28px] font-extrabold mt-[1.4rem] xs:max-md:w-[26vw] xs:max-md:text-[18px] xs:max-md:py-[0.3rem]">
-              MORE
+              BUY NOW
             </button>
           </a>
         </div>
