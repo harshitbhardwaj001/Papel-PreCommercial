@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="flex gap-12 justify-center mr-[4rem] xs:max-md:hidden">
+      <div className="flex gap-12 justify-center mr-[4rem] xs:max-md:hidden fixed w-full bg-[white] z-[10]">
         <div className="flex gap-[5rem] md:max-xl:gap-[2rem] h-[11vh] justify-center items-center bg-[#fff]">
           <div className="nav-left">
             <nav className="xs:max-md:hidden">
@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Navbar */}
-      <div className="flex justify-between px-[1rem] md:hidden w-[100vw] h-[11vh] items-center">
+      <div className="flex justify-between px-[1rem] md:hidden w-[100vw] h-[11vh] items-center fixed w-full bg-[white] z-[10]">
         <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         <Image
           src="/papel-logo-black.png"
