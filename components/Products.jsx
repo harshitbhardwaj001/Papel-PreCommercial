@@ -3,8 +3,8 @@ import React from "react";
 
 const Products = () => {
   return (
-    <div className="xs:max-md:relative w-[100vw] h-[110vh] xs:max-md:h-[230vh] flex flex-col pt-[3rem] items-center gap-10 xs:max-md:pt-[5vh]">
-      <div className="absolute top-[270%] bg-[#97D4E3] h-[60vh] w-[100vw] z-[-1] xs:max-md:top-[45%] xs:max-md:h-[140vh]"></div>
+    <div className="xs:max-md:relative w-[100vw] h-[110vh] xs:max-md:h-[230vh] flex flex-col pt-[3rem] items-center gap-10 xs:max-md:pt-[5vh] lg:my-[5rem]">
+      <div className="absolute top-[70%] bg-[#97D4E3] h-[75vh] w-[100vw] z-[-1] xs:max-md:top-[45%] xs:max-md:h-[140vh]"></div>
       <h1 className="text-[60px] font-extrabold xs:max-md:text-[45px]">
         PRODUCTS
       </h1>
@@ -109,9 +109,6 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <button className="bg-[#1B3C87] w-[16rem] py-[0.3rem] text-white text-[26px] font-extrabold">
-        More Products
-      </button>
     </div>
   );
 };
