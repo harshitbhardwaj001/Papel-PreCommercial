@@ -10,7 +10,7 @@ const page = () => {
       <div className="xs:max-md:ml-0">
         <Navbar />
       </div>
-      <div className="pt-[4rem] ">
+      <div className="pt-[5rem] ">
         <HeroBanner />
       </div>
       <div className="scroll-smooth" id="product">
