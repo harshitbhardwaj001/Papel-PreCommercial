@@ -13,7 +13,9 @@ const page = () => {
       <div className="pt-[4rem] ">
         <HeroBanner />
       </div>
-      <Products />
+      <div className="scroll-smooth" id="product">
+        <Products />
+      </div>
       <Footer />
     </div>
   );
