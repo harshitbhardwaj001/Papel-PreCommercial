@@ -60,7 +60,7 @@ const Cart = () => {
           </>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
-            <div className="relative mb-4 h-60 w-60 text-muted-foreground">
+            <div className="relative mb-4 h-80 w-80 text-muted-foreground">
               <Image
                 src="/character-with-product-1.png"
                 fill
@@ -69,8 +69,8 @@ const Cart = () => {
             </div>
             <div className="text-xl font-semibold">Your cart is empty</div>
             <SheetTrigger asChild>
-              <Link href="#product">
-                <button className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold items-center justify-center">
+              <Link href="#product" className="w-[80%] mx-auto">
+                <button className="w-full underline px-[1.5rem] py-[.5rem] rounded-[.5rem] text-[#1B3C87] font-semibold ">
                   Add items to your cart to checkout
                 </button>
               </Link>
