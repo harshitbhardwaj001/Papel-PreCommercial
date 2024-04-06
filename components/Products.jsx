@@ -1,7 +1,34 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Products = () => {
+  const [addone, setAddone] = useState(0);
+  const [addtwo, setAddtwo] = useState(0);
+  const [addthree, setAddthree] = useState(0);
+
+  const changeAddone = (i) => {
+    if (i === -1) {
+      if (addone > 0) setAddone(addone - 1);
+    } else {
+      setAddone(addone + 1);
+    }
+  };
+  const changeAddtwo = (i) => {
+    if (i === -1) {
+      if (addtwo > 0) setAddtwo(addtwo - 1);
+    } else {
+      setAddtwo(addtwo + 1);
+    }
+  };
+  const changeAddthree = (i) => {
+    if (i === -1) {
+      if (addthree > 0) setAddthree(addthree - 1);
+    } else {
+      setAddthree(addthree + 1);
+    }
+  };
   return (
     <div className="xs:max-md:relative w-[100vw] h-[110vh] xs:max-md:h-[230vh] flex flex-col pt-[3rem] items-center gap-10 xs:max-md:pt-[5vh] lg:my-[5rem]">
       <div className="absolute top-[70%] bg-[#97D4E3] h-[75vh] w-[100vw] z-[-1] xs:max-md:top-[45%] xs:max-md:h-[140vh]"></div>
@@ -32,13 +59,19 @@ const Products = () => {
               <div className="flex flex-col justify-center">
                 <h1 className="xs:max-md:text-[11px]">Add to cart</h1>
                 <div className="flex gap-4 xs:max-md:gap-2">
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddone(-1)}
+                  >
                     -
-                  </div>
-                  <div className="text-center text-[22px]">1</div>
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  </button>
+                  <div className="text-center text-[22px]">{addone}</div>
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddone(1)}
+                  >
                     +
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -64,13 +97,19 @@ const Products = () => {
               <div className="flex flex-col justify-center">
                 <h1 className="xs:max-md:text-[11px]">Add to cart</h1>
                 <div className="flex gap-4 xs:max-md:gap-2">
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddtwo(-1)}
+                  >
                     -
-                  </div>
-                  <div className="text-center text-[22px]">1</div>
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  </button>
+                  <div className="text-center text-[22px]">{addtwo}</div>
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddtwo(1)}
+                  >
                     +
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -96,13 +135,19 @@ const Products = () => {
               <div className="flex flex-col justify-center">
                 <h1 className="xs:max-md:text-[11px]">Add to cart</h1>
                 <div className="flex gap-4 xs:max-md:gap-2">
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddthree(-1)}
+                  >
                     -
-                  </div>
-                  <div className="text-center text-[22px]">1</div>
-                  <div className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]">
+                  </button>
+                  <div className="text-center text-[22px]">{addthree}</div>
+                  <button
+                    className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
+                    onClick={() => changeAddthree(1)}
+                  >
                     +
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
