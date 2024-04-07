@@ -3,6 +3,7 @@
 import { useCart } from "@/Hooks/use-cart";
 import Image from "next/image";
 import React, { useState } from "react";
+import { useToast } from "./ui/use-toast";
 
 const Products = () => {
   const [addone, setAddone] = useState(1);
@@ -32,6 +33,8 @@ const Products = () => {
       setAddthree(addthree + 1);
     }
   };
+  const { toast } = useToast();
+
   return (
     <div className="xs:max-md:relative w-[100vw] h-[110vh] xs:max-md:h-[255vh] flex flex-col pt-[3rem] items-center gap-10 xs:max-md:pt-[5vh] lg:my-[5rem]">
       <div className="absolute top-[160%] bg-[#97D4E3] h-[75vh] w-[100vw] z-[-1] xs:max-md:top-[45%] xs:max-md:h-[140vh]"></div>
@@ -85,7 +88,7 @@ const Products = () => {
               </div>
               <button
                 className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
-                onClick={() =>
+                onClick={() => {
                   addItem({
                     id: 1,
                     name: "Product Name",
@@ -93,8 +96,12 @@ const Products = () => {
                     quantity: addone,
                     price: 300,
                     image: "/papel-product-png.png",
-                  })
-                }
+                  });
+                  toast({
+                    title: "Congratulations!",
+                    description: "Your product has been added to the cart",
+                  });
+                }}
               >
                 Add to Cart
               </button>
@@ -144,7 +151,7 @@ const Products = () => {
               </div>
               <button
                 className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
-                onClick={() =>
+                onClick={() => {
                   addItem({
                     id: 2,
                     name: "Product Name",
@@ -152,8 +159,12 @@ const Products = () => {
                     quantity: addtwo,
                     price: 300,
                     image: "/papel-product-png.png",
-                  })
-                }
+                  });
+                  toast({
+                    title: "Congratulations!",
+                    description: "Your product has been added to the cart",
+                  });
+                }}
               >
                 Add to Cart
               </button>
@@ -199,7 +210,7 @@ const Products = () => {
               </div>
               <button
                 className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
-                onClick={() =>
+                onClick={() => {
                   addItem({
                     id: 3,
                     name: "Product Name",
@@ -207,8 +218,12 @@ const Products = () => {
                     quantity: addthree,
                     price: 300,
                     image: "/papel-product-png.png",
-                  })
-                }
+                  });
+                  toast({
+                    title: "Congratulations!",
+                    description: "Your product has been added to the cart",
+                  });
+                }}
               >
                 Add to Cart
               </button>

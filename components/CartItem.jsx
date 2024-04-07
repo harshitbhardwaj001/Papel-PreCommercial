@@ -26,14 +26,17 @@ const CartItem = ({ item }) => {
             <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
               {description}
             </span>
+            <span className="line-clamp-1 text-xs capitalize text-muted-foreground mt-2">
+              Qty: {item.quantity}
+            </span>
             <div className="mt-4 text-xs text-muted-foreground">
               <button
                 onClick={() => {
                   removeItem(id);
                 }}
-                className="flex items-center gap-0.5"
+                className="flex items-center gap-0.5 text-[#bb2124]"
               >
-                <X className="w-3 h-3" />
+                <X className="w-3 h-3 text-[#bb2124]" />
                 Remove
               </button>
             </div>

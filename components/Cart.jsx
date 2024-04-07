@@ -15,11 +15,15 @@ import Image from "next/image";
 import { useCart } from "@/Hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
+import { ScrollAreaScrollbar } from "@radix-ui/react-scroll-area";
 
 const Cart = () => {
   const { items } = useCart();
   const itemCount = items.length;
-  const cartTotal = items.reduce((acc, item) => acc + item.price, 0);
+  const cartTotal = items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   const { clearCart } = useCart();
   console.log(items);
   const fee = 1;
@@ -38,7 +42,7 @@ const Cart = () => {
         {itemCount > 0 ? (
           <>
             <div className="flex w-full flex-col pr-6">
-              <ScrollArea>
+              <ScrollArea className="h-72 rounded-md">
                 {items.map((item) => (
                   <CartItem item={item} key={item.id} />
                 ))}
