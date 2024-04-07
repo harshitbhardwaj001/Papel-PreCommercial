@@ -1,5 +1,6 @@
 "use client";
 
+import { useCart } from "@/Hooks/use-cart";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -7,6 +8,10 @@ const Products = () => {
   const [addone, setAddone] = useState(0);
   const [addtwo, setAddtwo] = useState(0);
   const [addthree, setAddthree] = useState(0);
+
+  const { addItem } = useCart();
+  const { removeItem } = useCart();
+  const { clearCart } = useCart();
 
   const changeAddone = (i) => {
     if (i === -1) {
@@ -61,14 +66,20 @@ const Products = () => {
                 <div className="flex gap-4 xs:max-md:gap-2">
                   <button
                     className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
-                    onClick={() => changeAddone(-1)}
+                    onClick={() => {
+                      changeAddone(-1);
+                      removeItem({ id: 1, quantity: addone, price: 300 });
+                    }}
                   >
                     -
                   </button>
                   <div className="text-center text-[22px]">{addone}</div>
                   <button
                     className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
-                    onClick={() => changeAddone(1)}
+                    onClick={() => {
+                      changeAddone(1);
+                      addItem({ id: 1, quantity: addone, price: 300 });
+                    }}
                   >
                     +
                   </button>
@@ -99,14 +110,20 @@ const Products = () => {
                 <div className="flex gap-4 xs:max-md:gap-2">
                   <button
                     className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
-                    onClick={() => changeAddtwo(-1)}
+                    onClick={() => {
+                      changeAddtwo(-1);
+                      removeItem({ id: 2, quantity: addtwo, price: 300 });
+                    }}
                   >
                     -
                   </button>
                   <div className="text-center text-[22px]">{addtwo}</div>
                   <button
                     className="w-[30px] h-[30px] bg-[#fff] shadow-lg rounded-[8px] text-center text-[22px]"
-                    onClick={() => changeAddtwo(1)}
+                    onClick={() => {
+                      changeAddtwo(1);
+                      addItem({ id: 2, quantity: addtwo, price: 300 });
+                    }}
                   >
                     +
                   </button>

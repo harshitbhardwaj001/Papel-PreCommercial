@@ -12,9 +12,13 @@ import { Separator } from "./ui/separator";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { useCart } from "@/Hooks/use-cart";
 
 const Cart = () => {
-  const itemCount = 0;
+  const { items } = useCart();
+  const itemCount = items.length;
+  const cartTotal = items.reduce((acc, item) => acc + item.price, 0);
+  console.log(items);
   const fee = 1;
   return (
     <Sheet>
@@ -44,7 +48,7 @@ const Cart = () => {
                 </div>
                 <div className="flex">
                   <span className="flex-1">Total </span>
-                  <span>{formatPrice(fee)}</span>
+                  <span>{formatPrice(cartTotal + fee)}</span>
                 </div>
               </div>
               <SheetFooter>
@@ -70,7 +74,7 @@ const Cart = () => {
             <div className="text-xl font-semibold">Your cart is empty</div>
             <SheetTrigger asChild>
               <Link href="#product" className="w-[80%] mx-auto">
-                <button className="w-full underline px-[1.5rem] py-[.5rem] rounded-[.5rem] text-[#1B3C87] font-semibold ">
+                <button className="w-full hover:underline underline-offset-4 px-[1.5rem] py-[.5rem] rounded-[.5rem] text-[#1B3C87] font-semibold ">
                   Add items to your cart to checkout
                 </button>
               </Link>
