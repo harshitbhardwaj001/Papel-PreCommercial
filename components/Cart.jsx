@@ -15,7 +15,6 @@ import Image from "next/image";
 import { useCart } from "@/Hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
-import { ScrollAreaScrollbar } from "@radix-ui/react-scroll-area";
 
 const Cart = () => {
   const { items } = useCart();

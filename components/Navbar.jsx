@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Navbar */}
-      <div className="flex justify-between px-[1rem] md:hidden w-[100vw] h-[11vh] items-center fixed w-full bg-[white] z-[10]">
+      <div className="flex justify-between px-[1rem] md:hidden w-[100vw] h-[11vh] items-center fixed bg-[white] z-[10]">
         <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         <Image
           src="/papel-logo-black.png"
