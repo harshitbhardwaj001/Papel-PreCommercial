@@ -13,11 +13,14 @@ import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/Hooks/use-cart";
+import { ScrollArea } from "./ui/scroll-area";
+import CartItem from "./CartItem";
 
 const Cart = () => {
   const { items } = useCart();
   const itemCount = items.length;
   const cartTotal = items.reduce((acc, item) => acc + item.price, 0);
+  const { clearCart } = useCart();
   console.log(items);
   const fee = 1;
   return (
@@ -30,11 +33,17 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-white">
         <SheetHeader className="space-y-2.5 pr-6">
-          <SheetTitle>Cart (0)</SheetTitle>
+          <SheetTitle>Cart {"(" + items.length + ")"}</SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
-            <div className="flex w-full flex-col pr-6">Cart Items</div>
+            <div className="flex w-full flex-col pr-6">
+              <ScrollArea>
+                {items.map((item) => (
+                  <CartItem item={item} key={item.id} />
+                ))}
+              </ScrollArea>
+            </div>
             <div className="space-y-4 pr-6">
               <Separator />
               <div className="space-y-1.5 pr-6">
@@ -60,6 +69,12 @@ const Cart = () => {
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
+              <button
+                className="w-full hover:underline underline-offset-4 px-[1.5rem] py-[.5rem] rounded-[.5rem] text-[#bb2124] border-[1px] border-[#bb2124] font-semibold "
+                onClick={() => clearCart()}
+              >
+                Empty Cart
+              </button>
             </div>
           </>
         ) : (
