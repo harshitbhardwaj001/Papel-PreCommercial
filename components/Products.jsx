@@ -49,11 +49,11 @@ const Products = () => {
           <div className="flex flex-col gap-5 xs:max-md:items-center">
             <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh]">
               <Image
-                src="/papel-product-png.png"
+                src="/website-product-6-pack.png"
                 alt="product-1"
                 width={400}
                 height={400}
-                className="pt-[1rem]"
+                className="pt-[1rem] rounded-[3rem]"
               />
             </div>
             <div className="flex flex-col gap-5 xs:max-md:gap-3">
@@ -95,7 +95,7 @@ const Products = () => {
                     description: "Quantity 6 Packs",
                     quantity: addone,
                     price: 300,
-                    image: "/papel-product-png.png",
+                    image: "/website-product-6-pack.png",
                   });
                   toast({
                     title: "Congratulations!",
@@ -110,13 +110,13 @@ const Products = () => {
         </div>
         <div className="video-card">
           <div className="flex flex-col gap-5 xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh]">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh] overflow-hidden">
               <Image
-                src="/papel-product-png.png"
+                src="/website-product-12-pack.png"
                 alt="product-1"
-                width={400}
+                width={350}
                 height={400}
-                className="pt-[1rem]"
+                className="pt-[1rem] rounded-[3rem]"
               />
             </div>
             <div className="flex flex-col gap-5 xs:max-md:gap-3">
@@ -158,7 +158,7 @@ const Products = () => {
                     description: "Quantity 12 Packs",
                     quantity: addtwo,
                     price: 300,
-                    image: "/papel-product-png.png",
+                    image: "/website-product-12-pack.png",
                   });
                   toast({
                     title: "Congratulations!",
@@ -173,13 +173,13 @@ const Products = () => {
         </div>
         <div className="video-card">
           <div className="flex flex-col gap-5 xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh]">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh] overflow-hidden">
               <Image
-                src="/papel-product-png.png"
+                src="/website-product-24-pack.png"
                 alt="product-1"
                 width={400}
                 height={400}
-                className="pt-[1rem]"
+                className="pt-[1rem] rounded-[3rem]"
               />
             </div>
             <div className="flex flex-col gap-5 xs:max-md:gap-3">
@@ -217,7 +217,7 @@ const Products = () => {
                     description: "Quantity 24 Packs",
                     quantity: addthree,
                     price: 300,
-                    image: "/papel-product-png.png",
+                    image: "/website-product-24-pack.png",
                   });
                   toast({
                     title: "Congratulations!",
