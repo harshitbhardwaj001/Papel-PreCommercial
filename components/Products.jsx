@@ -114,9 +114,9 @@ const Products = () => {
               <Image
                 src="/website-product-12-pack.png"
                 alt="product-1"
-                width={350}
+                width={400}
                 height={400}
-                className="pt-[1rem] rounded-[3rem]"
+                className="rounded-[3rem]"
               />
             </div>
             <div className="flex flex-col gap-5 xs:max-md:gap-3">
@@ -179,7 +179,7 @@ const Products = () => {
                 alt="product-1"
                 width={400}
                 height={400}
-                className="pt-[1rem] rounded-[3rem]"
+                className="pt-[0rem] rounded-[3rem]"
               />
             </div>
             <div className="flex flex-col gap-5 xs:max-md:gap-3">
