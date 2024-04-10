@@ -46,8 +46,8 @@ const Products = () => {
       </p>
       <div className="flex gap-12 xs:max-md:flex-col xs:max-md:gap-[4rem] xs:max-md:items-center">
         <div className="video-card">
-          <div className="flex flex-col gap-5 xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh]">
+          <div className="flex flex-col gap-8 xs:max-md:items-center">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[67vw]">
               <Image
                 src="/website-product-6-pack.png"
                 alt="product-1"
@@ -109,8 +109,8 @@ const Products = () => {
           </div>
         </div>
         <div className="video-card">
-          <div className="flex flex-col gap-5 xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh] overflow-hidden">
+          <div className="flex flex-col gap-8 xs:max-md:items-center">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[67vw] overflow-hidden">
               <Image
                 src="/website-product-12-pack.png"
                 alt="product-1"
@@ -172,8 +172,8 @@ const Products = () => {
           </div>
         </div>
         <div className="video-card">
-          <div className="flex flex-col gap-5 xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[42vh] overflow-hidden">
+          <div className="flex flex-col gap-8 xs:max-md:items-center">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[67vw] overflow-hidden">
               <Image
                 src="/website-product-24-pack.png"
                 alt="product-1"
