@@ -37,7 +37,7 @@ const Products = () => {
 
   return (
     <div className="xs:max-md:relative w-[100vw] h-[110vh] xs:max-md:h-[255vh] flex flex-col pt-[3rem] items-center gap-10 xs:max-md:pt-[5vh] lg:my-[5rem]">
-      <div className="absolute top-[160%] bg-[#97D4E3] h-[75vh] w-[100vw] z-[-1] xs:max-md:top-[45%] xs:max-md:h-[140vh]"></div>
+      <div className="absolute top-[160%] bg-[#97D4E3] h-[75vh] w-[100vw] z-[-1] xs:max-md:top-[40%] xs:max-md:h-[130vh]"></div>
       <h1 className="text-[60px] font-extrabold xs:max-md:text-[45px]">
         PRODUCTS
       </h1>
