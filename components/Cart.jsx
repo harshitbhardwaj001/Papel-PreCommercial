@@ -27,7 +27,7 @@ const Cart = () => {
   console.log(items);
   const fee = 1;
   return (
-    <Sheet>
+    <Sheet className="w-[80vw]">
       <SheetTrigger className="group -m-2 flex items-center p-2">
         <FaCartShopping
           size={28}
