@@ -41,7 +41,7 @@ const MobileNav = () => {
                     alt="wave"
                     width={180}
                     height={210}
-                    className="opacity-50 pl-5"
+                    className="opacity-50 ml-6"
                   />
                 </li>
 
@@ -53,7 +53,7 @@ const MobileNav = () => {
                     alt="wave"
                     width={180}
                     height={210}
-                    className="opacity-50 pl-5"
+                    className="opacity-50 ml-6"
                   />
                 </li>
                 {/* <Separator /> */}
@@ -64,7 +64,7 @@ const MobileNav = () => {
                     alt="wave"
                     width={180}
                     height={210}
-                    className="opacity-50 pl-5"
+                    className="opacity-50 ml-6"
                   />
                 </li>
                 {/* <Separator /> */}
@@ -75,7 +75,7 @@ const MobileNav = () => {
                     alt="wave"
                     width={180}
                     height={210}
-                    className="opacity-50 pl-5"
+                    className="opacity-50 ml-6"
                   />
                 </li>
                 {/* <Separator /> */}
@@ -86,7 +86,7 @@ const MobileNav = () => {
                     alt="wave"
                     width={180}
                     height={210}
-                    className="opacity-50 pl-5"
+                    className="opacity-50 ml-6"
                   />
                 </li>
                 {/* <Separator /> */}
