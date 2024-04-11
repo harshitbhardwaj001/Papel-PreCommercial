@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { FaCartShopping } from "react-icons/fa6";
 import Cart from "./Cart";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -58,7 +59,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Navbar */}
       <div className="flex justify-between px-[1rem] md:hidden w-[100vw] h-[11vh] items-center fixed bg-[white] z-[10]">
-        <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+        <MobileNav />
         <Image
           src="/papel-logo-black.png"
           alt="logo"
