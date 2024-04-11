@@ -47,7 +47,7 @@ const Products = () => {
       <div className="flex gap-12 xs:max-md:flex-col xs:max-md:gap-[4rem] xs:max-md:items-center">
         <div className="video-card">
           <div className="flex flex-col gap-8 mx:max-md:gap-[3.8rem] xs:max-md:items-center">
-            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[67vw]">
+            <div className="w-[350px] h-[360px] bg-[#fff] shadow-xl rounded-[3rem] xs:max-md:w-[67vw] xs:max-md:h-[67vw] overflow-hidden">
               <Image
                 src="/website-product-6-pack.png"
                 alt="product-1"
