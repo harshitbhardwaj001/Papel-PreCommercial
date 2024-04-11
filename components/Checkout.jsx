@@ -37,7 +37,43 @@ const Checkout = () => {
                 </p>
               </div>
             ) : null}
+            <ul
+              className={cn({
+                "divide-y divide-gray-200 border-b border-t border-gray-200":
+                  items.length > 0,
+              })}
+            >
+              {items.map((product) => {
+                console.log(product);
+                return (
+                  <li key={product.id} className="flex py-6 sm:py-10">
+                    <div className="flex-shrink-0">
+                      <div className="relative h-24 w-24">
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="h-full w-full rounded-md object-cover object-center sm:h-48 sm:w-48"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
+          <section className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
+            <h2 className="text-lg font-medium text-gray-900">Order Summary
+            </h2>
+            <div className="mt-6 space-y-4">
+              <div className="flex items-center justify-between">
+                <p className="text-sm text-gray-600">
+                  Subtotal
+                </p>
+                <p></p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
