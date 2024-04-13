@@ -2,11 +2,19 @@
 
 import React from "react";
 import { useCart } from "@/Hooks/use-cart";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { X } from "lucide-react";
+import Link from "next/link";
+import Quantity from "./Quantity";
 
 const Checkout = () => {
   const { items, removeItem } = useCart();
+  const cartTotal = items.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -35,6 +43,11 @@ const Checkout = () => {
                 <p className="text-muted-foreground text-center">
                   Whoops! Nothing to show here yet.
                 </p>
+                <Link href="/shop#product" className="w-[80%] mx-auto">
+                  <button className="w-full hover:underline underline-offset-4 px-[1.5rem] py-[.5rem] rounded-[.5rem] text-[#1B3C87] font-semibold ">
+                    Add items to your cart to checkout
+                  </button>
+                </Link>
               </div>
             ) : null}
             <ul
@@ -57,8 +70,42 @@ const Checkout = () => {
                         />
                       </div>
                     </div>
-                    <div className="relative h-24 w-full">
-                      <p key={product.id}>{product.name}</p>
+                    <div className="ml-4 flex justify-between items-center sm:ml-6 w-full">
+                      <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
+                        <div>
+                          <div>
+                            <h3
+                              className="text-lg font-medium text-gray-900 hover:text-gray-800"
+                              key={product.id}
+                            >
+                              {product.name}
+                            </h3>
+                          </div>
+                          <h3
+                            className="text-sm font-medium text-gray-700"
+                            key={product.id}
+                          >
+                            {product.description}
+                          </h3>
+                          <p className="mt-1 text-sm font-medium text-gray-900">
+                            <Quantity item={product} />
+                          </p>
+                          <p className="mt-1 text-sm font-medium text-gray-900">
+                            {formatPrice(product.price * product.quantity)}
+                          </p>
+                        </div>
+                        <div></div>
+                      </div>
+                      <div>
+                        <Button
+                          aria-label="remove product"
+                          onClick={() => removeItem(product.id)}
+                          className="border-[2px] border-[#bb2124] rounded-[0.5rem] flex gap-1 p-2 h-[2rem] text-[#bb2124] hover:underline underline-offset-2"
+                        >
+                          <X className="h-3 w-3 text-[#bb2124]" />
+                          <h1 className="text-[12px]">Remove</h1>
+                        </Button>
+                      </div>
                     </div>
                   </li>
                 );
