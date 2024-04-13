@@ -5,7 +5,7 @@ import { useCart } from "@/Hooks/use-cart";
 import { cn, formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Quantity from "./Quantity";
 
@@ -15,6 +15,8 @@ const Checkout = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+  const fee = 1;
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -117,9 +119,34 @@ const Checkout = () => {
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-between">
                 <p className="text-sm text-gray-600">Subtotal</p>
-                <p></p>
+                <p className="text-sm font-medium text-gray-900">
+                  {formatPrice(cartTotal)}
+                </p>
               </div>
             </div>
+
+            <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+              <div className="text-base font-medium text-gray-900">
+                Order Total
+              </div>
+              <div className="text-base font-medium text-gray-900">
+                {formatPrice(cartTotal + fee)}
+              </div>
+            </div>
+
+            {/* <div className="mt-6">
+              <Button
+                disabled={items.length === 0 || isLoading}
+                onClick={() => createCheckoutSession({ productIds })}
+                className="w-full"
+                size="lg"
+              >
+                {isLoading ? (
+                  <Loader2 className="w-4 h-4 animate-spin mr-1.5" />
+                ) : null}
+                Checkout
+              </Button>
+            </div> */}
           </section>
         </div>
       </div>
