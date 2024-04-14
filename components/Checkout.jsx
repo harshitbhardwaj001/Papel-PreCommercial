@@ -132,16 +132,9 @@ const Checkout = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-600">Transaction Fee</p>
-                <p className="text-sm font-medium text-gray-900">
-                  {formatPrice(fee)}
-                </p>
-              </div>
-            </div>
+            
 
-            <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+            <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
               <div className="text-base font-medium text-gray-900">
                 Order Total
               </div>
