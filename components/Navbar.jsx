@@ -18,13 +18,13 @@ const Navbar = () => {
             <nav className="xs:max-md:hidden">
               <ul className="flex gap-20 text-[18px] md:max-xl:text-[14px] md:max-xl:gap-12 font-medium ml-[2rem]">
                 <li>
-                  <a href="#">About</a>
+                  <a href="/">About</a>
                 </li>
                 <li>
-                  <a href="#">Shop</a>
+                  <a href="/shop">Shop</a>
                 </li>
                 <li>
-                  <a href="#">Verify your Papel</a>
+                  <a href="/">Verify your Papel</a>
                 </li>
               </ul>
             </nav>
@@ -42,10 +42,10 @@ const Navbar = () => {
             <nav className="xs:max-md:hidden">
               <ul className="flex gap-20 text-[18px] md:max-xl:text-[14px] md:max-xl:gap-12 font-medium">
                 <li>
-                  <a href="#">B2B</a>
+                  <a href="/">B2B</a>
                 </li>
                 <li>
-                  <a href="#">Sustainaibility</a>
+                  <a href="/">Sustainaibility</a>
                 </li>
               </ul>
             </nav>

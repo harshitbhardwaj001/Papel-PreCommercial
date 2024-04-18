@@ -35,7 +35,7 @@ const MobileNav = () => {
             <nav>
               <ul className="flex flex-col gap-5 text-[28px] md:max-xl:text-[14px] text-[#1B3C87] md:max-xl:gap-12 font-medium ml-[2rem]">
                 <li>
-                  <a href="#">Shop</a>
+                  <a href="/shop">Shop</a>
                   <Image
                     src="/wave-design-gray.png"
                     alt="wave"
@@ -47,7 +47,7 @@ const MobileNav = () => {
 
                 {/* <Separator className="bg-[#1B3C87]" /> */}
                 <li>
-                  <a href="#">About Us</a>
+                  <a href="/">About Us</a>
                   <Image
                     src="/wave-design-gray.png"
                     alt="wave"
@@ -58,7 +58,7 @@ const MobileNav = () => {
                 </li>
                 {/* <Separator /> */}
                 <li>
-                  <a href="#">B2B</a>
+                  <a href="/">B2B</a>
                   <Image
                     src="/wave-design-gray.png"
                     alt="wave"
@@ -69,7 +69,7 @@ const MobileNav = () => {
                 </li>
                 {/* <Separator /> */}
                 <li>
-                  <a href="#">Sustainability</a>
+                  <a href="/">Sustainability</a>
                   <Image
                     src="/wave-design-gray.png"
                     alt="wave"
@@ -80,7 +80,7 @@ const MobileNav = () => {
                 </li>
                 {/* <Separator /> */}
                 <li>
-                  <a href="#">Verify your Papel</a>
+                  <a href="/">Verify your Papel</a>
                   <Image
                     src="/wave-design-gray.png"
                     alt="wave"
@@ -96,7 +96,7 @@ const MobileNav = () => {
         </SheetHeader>
         <SheetFooter>
           <h1 className="text-black text-[13px] text-right mt-[3.5rem] pr-10">
-            &#169; PAPEL WATER
+            &#169; BELLATOR BEVERAGES
           </h1>
         </SheetFooter>
       </SheetContent>
