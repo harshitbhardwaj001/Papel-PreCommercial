@@ -59,7 +59,7 @@ const Footer = () => {
           </h1>
           <div className="w-[17vw] h-[21vh] bg-[#d6d6d6] mt-[0.8rem]"></div>
           <h1 className="text-white text-[20px] text-right mt-[4rem]">
-            &#169; PAPEL WATER
+            &#169; BELLATOR BEVERAGES
           </h1>
         </div>
       </div>
