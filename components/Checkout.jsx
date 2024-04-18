@@ -15,7 +15,7 @@ const Checkout = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-  const fee = 1;
+  const fee = items.reduce((acc, item) => acc + item.shipping, 0);
 
   return (
     <div className="bg-white">
@@ -132,7 +132,6 @@ const Checkout = () => {
                 </p>
               </div>
             </div>
-            
 
             <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
               <div className="text-base font-medium text-gray-900">
