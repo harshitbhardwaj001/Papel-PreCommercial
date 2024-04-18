@@ -57,7 +57,14 @@ const Footer = () => {
           <h1 className="font-medium text-[22px] text-[#bebebe] leading-[1.5rem] ">
             Secured payments <br /> powered by
           </h1>
-          <div className="w-[17vw] h-[21vh] bg-[#d6d6d6] mt-[0.8rem]"></div>
+          <div className="w-[17vw] h-[21vh] bg-[#fff] mt-[0.8rem] flex justify-center items-center">
+            <Image
+              src="/PhonePe-Logo.png"
+              alt="Phonepe"
+              width={500}
+              height={500}
+            />
+          </div>
           <h1 className="text-white text-[20px] text-right mt-[4rem]">
             &#169; BELLATOR BEVERAGES
           </h1>
@@ -92,7 +99,14 @@ const Footer = () => {
             <h1 className="font-medium text-[14px] text-[#bebebe] ">
               Secured payments <br /> powered by
             </h1>
-            <div className="w-[40vw] h-[11vh] bg-[#d6d6d6] mt-[0.8rem]"></div>
+            <div className="w-[40vw] h-[11vh] bg-[#fff] mt-[0.8rem] flex justify-center items-center">
+              <Image
+                src="/PhonePe-Logo.png"
+                alt="Phonepe"
+                width={300}
+                height={300}
+              />
+            </div>
           </div>
         </div>
         <Image
