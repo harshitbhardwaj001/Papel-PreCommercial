@@ -117,8 +117,8 @@ const Footer = () => {
               <FaTwitter size={20} className="text-[#101821]" />
             </div>
           </div>
-          <h1 className="text-white text-[13px] text-right mt-[0.3rem] ml-[1.7rem]">
-            &#169;PAPEL WATER
+          <h1 className="text-white text-[13px] text-right mt-[0.3rem] ml-[-1rem]">
+            &#169;BELLATOR BEVERAGES
           </h1>
         </div>
       </div>

@@ -22,6 +22,15 @@ export const useCart = create()(
           }
         });
       },
+      changeQuantity: (item, quantity) =>
+        set((state) => {
+          const existingItemIndex = state.items.findIndex(
+            (i) => i.id === item.id
+          );
+          const updatedItems = [...state.items];
+          updatedItems[existingItemIndex].quantity = quantity;
+          return { items: updatedItems };
+        }),
       removeItem: (id) =>
         set((state) => ({
           items: state.items.filter((item) => item.id !== id),

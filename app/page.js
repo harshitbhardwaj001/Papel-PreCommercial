@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { TbShoppingCartSearch } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -8,6 +10,15 @@ export default function Home() {
         alt="logo"
         className="absolute top-8 w-[50px] left-12 xs:max-md:w-[80px] xs:max-md:relative xs:max-md:mx-auto xs:max-md:top-[40px] xs:max-md:left-0"
       />
+      <div className="absolute top-8 right-12 z-10 xs:max-md:hidden">
+        <Link
+          href="/shop"
+          className="text-[18px] font-bold hover:underline underline-offset-8 hover:text-[#1A3C86] xs:max-md:text-[15px] xs:max-md:font-medium xs:max-md:underline-offset-4 flex gap-2"
+        >
+          <TbShoppingCartSearch className="text-[25px] xs:max-md:text-[20px]" />
+          SHOP NOW
+        </Link>
+      </div>
       <div className="flex gap-32 w-[100vw] h-[100vh] bg-[#fff] xs:max-md:block xs:max-md:h-auto">
         <div className="flex flex-col gap-10 w-[40vw] pt-[8rem] pl-[10rem] xs:max-md:pl-[0rem] xs:max-md:items-center xs:max-md:w-[100vw] xs:max-md:pt-[5rem]">
           <h1 className="text-[35px] text-[#1A3C86] text-left font-medium tracking-wide mb-[-2rem] xs:max-md:text-[18px] xs:max-md:text-center">

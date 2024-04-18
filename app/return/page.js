@@ -103,10 +103,13 @@ const page = () => {
             abide by and/or meet all of the requirements set forth in this
             Section.
           </p>
-          <h1 className="text-[22px] font-bold mt-[3rem]">Cancellations</h1>
+          <h1 className="text-[22px] font-bold mt-[3rem]">
+            TAT For Returns and Replacements
+          </h1>
           <p className="text-[#1A3C86] text-[1.1rem] ">
-            You may cancel your order of any product offered through the Service
-            at any time before shipping.
+            Turnaround time for refund will be 5-7 working days. <br />
+            Turnaround time for returns/replacement to depend upon our courier
+            partner.
           </p>
           <h1 className="text-[22px] font-bold mt-[3rem]">Cancellations</h1>
           <p className="text-[#1A3C86] text-[1.1rem] mb-[7rem]">
@@ -116,7 +119,7 @@ const page = () => {
         </div>
       </div>
       <p className=" text-[20px] text-center h-[10vh] font-bold">
-        &#169;2024 <span className="text-[#1A3C86]">PAPEL WATER</span>
+        &#169;2024 <span className="text-[#1A3C86]">BELLATOR BEVERAGES</span>
       </p>
     </>
   );

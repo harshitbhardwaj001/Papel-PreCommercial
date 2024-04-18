@@ -96,6 +96,7 @@ const Products = () => {
                     quantity: addone,
                     price: 300,
                     image: "/website-product-6-pack.png",
+                    shipping: 100,
                   });
                   toast({
                     title: "Congratulations!",
@@ -124,7 +125,7 @@ const Products = () => {
                 <div className="flex flex-col text-[20px] xs:max-md:text-[15px]">
                   <h1>Product Name</h1>
                   <h1>Quantity 12 Packs</h1>
-                  <h1>Cost &#8377;300</h1>
+                  <h1>Cost &#8377;540</h1>
                 </div>
                 <div className="flex flex-col justify-center">
                   <h1 className="xs:max-md:text-[11px]">Quantity</h1>
@@ -157,8 +158,9 @@ const Products = () => {
                     name: "Product Name",
                     description: "Quantity 12 Packs",
                     quantity: addtwo,
-                    price: 300,
+                    price: 540,
                     image: "/website-product-12-pack.png",
+                    shipping: 0,
                   });
                   toast({
                     title: "Congratulations!",
@@ -187,7 +189,7 @@ const Products = () => {
                 <div className="flex flex-col text-[20px] xs:max-md:text-[15px]">
                   <h1>Product Name</h1>
                   <h1>Quantity 24 Packs</h1>
-                  <h1>Cost &#8377;300</h1>
+                  <h1>Cost &#8377;960</h1>
                 </div>
                 <div className="flex flex-col justify-center">
                   <h1 className="xs:max-md:text-[11px]">Quantity</h1>
@@ -216,8 +218,9 @@ const Products = () => {
                     name: "Product Name",
                     description: "Quantity 24 Packs",
                     quantity: addthree,
-                    price: 300,
+                    price: 960,
                     image: "/website-product-24-pack.png",
+                    shipping: 0,
                   });
                   toast({
                     title: "Congratulations!",

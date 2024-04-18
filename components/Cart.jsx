@@ -25,7 +25,7 @@ const Cart = () => {
   );
   const { clearCart } = useCart();
   console.log(items);
-  const fee = 1;
+  const fee = items.reduce((acc, item) => acc + item.shipping, 0);
   return (
     <Sheet className="w-[80vw]">
       <SheetTrigger className="group -m-2 flex items-center p-2">
@@ -52,14 +52,14 @@ const Cart = () => {
               <div className="space-y-1.5 pr-6">
                 <div className="flex">
                   <span className="flex-1">Shipping</span>
-                  <span>0</span>
-                </div>
-                <div className="flex">
-                  <span className="flex-1">Transaction Fee</span>
                   <span>{formatPrice(fee)}</span>
                 </div>
+                {/* <div className="flex">
+                  <span className="flex-1">Transaction Fee</span>
+                  <span>{formatPrice(fee)}</span>
+                </div> */}
                 <div className="flex">
-                  <span className="flex-1">Total </span>
+                  <span className="flex-1">Total</span>
                   <span>{formatPrice(cartTotal + fee)}</span>
                 </div>
               </div>
