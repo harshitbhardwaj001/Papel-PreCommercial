@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import { X, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Quantity from "./Quantity";
+// import Trash from "@/components/icons/Trash";
 
 const Checkout = () => {
   const { items, removeItem } = useCart();
@@ -19,8 +20,21 @@ const Checkout = () => {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h1 className="text-3xl font.bold tracking-tight text-gray-900 sm:text-4xl">
+      <div className="flex gap-12 justify-center mr-[4rem] xs:max-md:hidden fixed w-full bg-[white] z-[10] ">
+        <div className="flex gap-[5rem] md:max-xl:gap-[2rem] h-[11vh] justify-center items-center bg-[#fff] ">
+          <div className="mb-3" >
+            <Image
+              src="/papel-logo-black.png"
+              alt="logo"
+              width={160}
+              height={160}
+              className="md:max-xl:w-[130px] xs:max-md:w-[130px]"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8 ">
+        <h1 className="text-3xl font.bold tracking-tight text-gray-900 sm:text-4xl mt-14">
           Shopping Cart
         </h1>
         <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
@@ -142,19 +156,16 @@ const Checkout = () => {
               </div>
             </div>
 
-            {/* <div className="mt-6">
-              <Button
-                disabled={items.length === 0 || isLoading}
-                onClick={() => createCheckoutSession({ productIds })}
-                className="w-full"
+            <div className="mt-6">
+              <Link href="/address" className="w-full">
+              <button
+                className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
                 size="lg"
               >
-                {isLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin mr-1.5" />
-                ) : null}
-                Checkout
-              </Button>
-            </div> */}
+                Place Order
+              </button>
+              </Link>
+            </div>
           </section>
         </div>
       </div>
