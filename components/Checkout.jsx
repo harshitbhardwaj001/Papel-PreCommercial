@@ -22,7 +22,7 @@ const Checkout = () => {
     <div className="bg-white">
       <div className="flex gap-12 justify-center mr-[4rem] xs:max-md:hidden fixed w-full bg-[white] z-[10] ">
         <div className="flex gap-[5rem] md:max-xl:gap-[2rem] h-[11vh] justify-center items-center bg-[#fff] ">
-          <div className="mb-3" >
+          <div className="mb-3">
             <Image
               src="/papel-logo-black.png"
               alt="logo"
@@ -128,45 +128,138 @@ const Checkout = () => {
               })}
             </ul>
           </div>
-          <section className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
-            <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-600">Subtotal</p>
-                <p className="text-sm font-medium text-gray-900">
-                  {formatPrice(cartTotal)}
+          <div className="px-4 sm:p-6 lg:col-span-5 lg:mt-[rem]">
+            <div>
+              <div className="mb-[2rem] xs:max-md:mt-[2rem]">
+                <p className=" text-[1.5rem] text-center font-bold">
+                  Enter Your Details
                 </p>
               </div>
+              <form className="max-w-md mx-auto pb-[3rem]">
+                <div className="mb-4 ">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Street Address"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="City"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    placeholder="State"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="postalCode"
+                    name="postalCode"
+                    placeholder="Postal Code"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    placeholder="Country"
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                  />
+                </div>
+              </form>
             </div>
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-gray-600">Shipping Fee</p>
-                <p className="text-sm font-medium text-gray-900">
-                  {formatPrice(fee)}
-                </p>
+            <section className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
+              <h2 className="text-lg font-medium text-gray-900">
+                Order Summary
+              </h2>
+              <div className="mt-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-600">Subtotal</p>
+                  <p className="text-sm font-medium text-gray-900">
+                    {formatPrice(cartTotal)}
+                  </p>
+                </div>
               </div>
-            </div>
+              <div className="mt-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-600">Shipping Fee</p>
+                  <p className="text-sm font-medium text-gray-900">
+                    {formatPrice(fee)}
+                  </p>
+                </div>
+              </div>
 
-            <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
-              <div className="text-base font-medium text-gray-900">
-                Order Total
+              <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-4">
+                <div className="text-base font-medium text-gray-900">
+                  Order Total
+                </div>
+                <div className="text-base font-medium text-gray-900">
+                  {formatPrice(cartTotal + fee)}
+                </div>
               </div>
-              <div className="text-base font-medium text-gray-900">
-                {formatPrice(cartTotal + fee)}
-              </div>
-            </div>
 
-            <div className="mt-6">
-              <Link href="/address" className="w-full">
-              <button
-                className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
-                size="lg"
-              >
-                Place Order
-              </button>
-              </Link>
-            </div>
-          </section>
+              <div className="mt-6">
+                <Link href="#" className="w-full">
+                  <button
+                    className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
+                    size="lg"
+                  >
+                    Place Order
+                  </button>
+                </Link>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>

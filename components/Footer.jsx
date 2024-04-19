@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import {
   FaInstagram,
@@ -34,39 +35,50 @@ const Footer = () => {
             <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaInstagram size={30} className="text-[#101821]" />
             </div>
-            <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
+            {/* <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaFacebook size={30} className="text-[#101821]" />
-            </div>
+            </div> */}
             <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaLinkedin size={30} className="text-[#101821]" />
             </div>
-            <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
+            {/* <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaTwitter size={30} className="text-[#101821]" />
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="flex flex-col gap-4 text-[28px] font-medium text-[#101821] w-[20vw]">
-          <h1>PAPEL FAQs</h1>
-          <h1>INVESTORS</h1>
-          <h1>PRIVACY POLICY</h1>
-          <h1>TERMS OF USE</h1>
-          <h1>CONTACT US</h1>
+        <div className="flex flex-col gap-4 text-[28px] font-medium text-[#fff] w-[20vw]">
+          <Link href="#">
+            <h1>INVESTORS</h1>
+          </Link>
+          <Link href="/terms">
+            <h1>TERMS OF USE</h1>
+          </Link>
+          <Link href="/privacy">
+            <h1>PRIVACY POLICY</h1>
+          </Link>
+          <Link href="/return">
+            <h1>RETURN & REFUND</h1>
+          </Link>
+          <Link href="#">
+            <h1>CONTACT US</h1>
+          </Link>
         </div>
-        <div className="flex flex-col gap-[0.7rem] mt-[5.4rem] xs:max-md:hidden">
+        <div className="flex flex-col gap-[1.2rem] mt-[5.4rem] xs:max-md:hidden">
           <h1 className="font-medium text-[28px] text-white">Payment</h1>
           <h1 className="font-medium text-[22px] text-[#bebebe] leading-[1.5rem] ">
             Secured payments <br /> powered by
           </h1>
-          <div className="w-[17vw] h-[21vh] bg-[#fff] mt-[0.8rem] flex justify-center items-center">
+          <div className="w-[17vw] h-[21vh] bg-none mt-[0.8rem] relative">
             <Image
               src="/PhonePe-Logo.png"
               alt="Phonepe"
-              width={500}
-              height={500}
+              width={220}
+              height={220}
+              className="absolute top-[-2.5rem] left-[-1.8rem]"
             />
           </div>
-          <h1 className="text-white text-[20px] text-right mt-[4rem]">
-            &#169; BELLATOR BEVERAGES
+          <h1 className="text-white text-[12px] text-left mt-[4rem]">
+            &#169; BELLATOR BEVERAGES PRIVATE LIMITED
           </h1>
         </div>
       </div>
