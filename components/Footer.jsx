@@ -33,13 +33,25 @@ const Footer = () => {
           />
           <div className="flex gap-5">
             <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
-              <FaInstagram size={30} className="text-[#101821]" />
+              <Link
+                href="https://www.instagram.com/papelwater/"
+                target="_blank"
+              >
+                <FaInstagram size={30} className="text-[#101821]" />
+              </Link>
             </div>
-            {/* <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
-              <FaFacebook size={30} className="text-[#101821]" />
-            </div> */}
             <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
-              <FaLinkedin size={30} className="text-[#101821]" />
+              <Link href="#" target="_blank">
+                <FaFacebook size={30} className="text-[#101821]" />
+              </Link>
+            </div>
+            <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
+              <Link
+                href="https://www.linkedin.com/company/papel-water/"
+                target="_blank"
+              >
+                <FaLinkedin size={30} className="text-[#101821]" />
+              </Link>
             </div>
             {/* <div className="w-[40px] h-[40px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaTwitter size={30} className="text-[#101821]" />
@@ -139,9 +151,9 @@ const Footer = () => {
             <div className="w-[25px] h-[25px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaLinkedin size={20} className="text-[#101821]" />
             </div>
-            <div className="w-[25px] h-[25px] bg-[#fff] rounded-full flex justify-center items-center">
+            {/* <div className="w-[25px] h-[25px] bg-[#fff] rounded-full flex justify-center items-center">
               <FaTwitter size={20} className="text-[#101821]" />
-            </div>
+            </div> */}
           </div>
           <h1 className="text-white text-[13px] text-right mt-[0.3rem] ml-[-1rem]">
             &#169;BELLATOR BEVERAGES

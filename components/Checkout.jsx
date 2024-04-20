@@ -129,32 +129,34 @@ const Checkout = () => {
             </ul>
           </div>
           <div className="px-4 sm:p-6 lg:col-span-5 lg:mt-[rem]">
-            <div>
+            <div className="bg-gray-50 px-4 py-6 sm:p-6 lg:mt-0 lg:p-8 mb-[2rem] rounded-[1rem]">
               <div className="mb-[2rem] xs:max-md:mt-[2rem]">
                 <p className=" text-[1.5rem] text-center font-bold">
                   Enter Your Details
                 </p>
               </div>
               <form className="max-w-md mx-auto pb-[3rem]">
-                <div className="mb-4 ">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Name"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
-                </div>
-                <div className="mb-4">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
+                <div className="flex gap-2">
+                  <div className="mb-4 ">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
                 </div>
                 <div className="mb-4">
                   <input
@@ -176,49 +178,53 @@ const Checkout = () => {
                     className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
                   />
                 </div>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="City"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
+                <div className="flex gap-2">
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      placeholder="City"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      id="state"
+                      name="state"
+                      placeholder="State"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
                 </div>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    id="state"
-                    name="state"
-                    placeholder="State"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
-                </div>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    id="postalCode"
-                    name="postalCode"
-                    placeholder="Postal Code"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
-                </div>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    id="country"
-                    name="country"
-                    placeholder="Country"
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
-                  />
+                <div className="flex gap-2">
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      id="postalCode"
+                      name="postalCode"
+                      placeholder="Postal Code"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      placeholder="Country"
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    />
+                  </div>
                 </div>
               </form>
             </div>
-            <section className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
+            <section className="mt-16 rounded-[1rem] bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
               <h2 className="text-lg font-medium text-gray-900">
                 Order Summary
               </h2>

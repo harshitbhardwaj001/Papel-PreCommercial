@@ -6,6 +6,7 @@ import Hamburger from "hamburger-react";
 import { FaCartShopping } from "react-icons/fa6";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -30,13 +31,15 @@ const Navbar = () => {
             </nav>
           </div>
           <div className="nav-center">
-            <Image
-              src="/papel-logo-black.png"
-              alt="logo"
-              width={180}
-              height={180}
-              className="md:max-xl:w-[130px] xs:max-md:w-[130px]"
-            />
+            <Link href="/">
+              <Image
+                src="/papel-logo-black.png"
+                alt="logo"
+                width={180}
+                height={180}
+                className="md:max-xl:w-[130px] xs:max-md:w-[130px]"
+              />
+            </Link>
           </div>
           <div className="nav-right">
             <nav className="xs:max-md:hidden">
