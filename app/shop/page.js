@@ -24,13 +24,13 @@ const page = () => {
       <div className="scroll-smooth" id="product">
         <Products />
       </div>
-      {/* <Videos /> */}
-      {/* <AboutPapel /> */}
-      {/* <Slogan /> */}
+      {/* <Videos />
+      <AboutPapel />
+      <Slogan />
 
-      {/* <AboutUs /> */}
-      {/* <Testimonials/> */}
-      {/* <Subscription/> */}
+      <AboutUs />
+      <Testimonials />
+      <Subscription /> */}
 
       <Footer />
     </div>

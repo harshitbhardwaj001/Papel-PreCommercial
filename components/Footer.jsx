@@ -13,7 +13,7 @@ const Footer = () => {
     <>
       <div className="w-[100vw] h-[80vh] flex gap-[8rem] bg-[#101821] px-[5rem] items-center xs:max-md:hidden">
         <div className="flex flex-col gap-3 w-[35vw] mt-[6rem]">
-          <h1 className="text-[35px] font-semibold text-white">ABOUT PAPEL</h1>
+          {/* <h1 className="text-[35px] font-semibold text-white">ABOUT PAPEL</h1>
           <p className="text-[18px] text-[#d6d6d6]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut
             pariatur porro a ad quasi veniam aliquid quaerat. Reiciendis vel
@@ -23,7 +23,16 @@ const Footer = () => {
             maxime quisquam! maiores. Minus numquam incidunt corporis recusandae
             enim, iste aliquid possimus asperiores molestiae, molestias qui
             maxime quisquam!
-          </p>
+          </p> */}
+          <Image
+            src="/papel-logo-white.png"
+            alt="logo"
+            width={300}
+            height={500}
+          />
+          {/* <p className="text-[18px] text-[#d6d6d6]">
+            Subscribe to our newsletter
+          </p> */}
           <Image
             src="/wave-design-white.png"
             alt="wave"

@@ -129,7 +129,10 @@ const page = () => {
         </div>
       </div>
       <p className=" text-[20px] text-center h-[10vh] font-bold">
-        &#169;2024 <span className="text-[#1A3C86]">PAPEL WATER</span>
+        &#169;2024{" "}
+        <span className="text-[#1A3C86]">
+          BELLATOR BEVERAGES PRIVATE LIMITED
+        </span>
       </p>
     </>
   );
