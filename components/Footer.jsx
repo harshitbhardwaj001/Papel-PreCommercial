@@ -77,6 +77,9 @@ const Footer = () => {
           <Link href="/privacy">
             <h1>PRIVACY POLICY</h1>
           </Link>
+          <Link href="/shipping">
+            <h1>SHIPPING POLICY</h1>
+          </Link>
           <Link href="/return">
             <h1>RETURN & REFUND</h1>
           </Link>
