@@ -19,19 +19,19 @@ const Navbar = () => {
             <nav className="xs:max-md:hidden">
               <ul className="flex gap-20 text-[18px] md:max-xl:text-[14px] md:max-xl:gap-12 font-medium ml-[2rem]">
                 <li>
-                  <a href="/">About</a>
+                  <a href="/soon">About</a>
                 </li>
                 <li>
-                  <a href="/shop">Shop</a>
+                  <a href="/">Shop</a>
                 </li>
                 <li>
-                  <a href="/">Verify your Papel</a>
+                  <a href="/soon">Verify your Papel</a>
                 </li>
               </ul>
             </nav>
           </div>
           <div className="nav-center">
-            <Link href="/">
+            <Link href="/soon">
               <Image
                 src="/papel-logo-black.png"
                 alt="logo"
@@ -45,10 +45,10 @@ const Navbar = () => {
             <nav className="xs:max-md:hidden">
               <ul className="flex gap-20 text-[18px] md:max-xl:text-[14px] md:max-xl:gap-12 font-medium">
                 <li>
-                  <a href="/">B2B</a>
+                  <a href="/soon">B2B</a>
                 </li>
                 <li>
-                  <a href="/">Sustainaibility</a>
+                  <a href="/soon">Sustainaibility</a>
                 </li>
               </ul>
             </nav>
