@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4 text-[28px] font-medium text-[#fff] w-[20vw]">
-          <Link href="#">
+          <Link href="/soon">
             <h1>INVESTORS</h1>
           </Link>
           <Link href="/terms">
@@ -83,9 +83,9 @@ const Footer = () => {
           <Link href="/return">
             <h1>RETURN & REFUND</h1>
           </Link>
-          <Link href="#">
+          {/* <Link href="#">
             <h1>CONTACT US</h1>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col gap-[1.2rem] mt-[5.4rem] xs:max-md:hidden">
           <h1 className="font-medium text-[28px] text-white">Payment</h1>
@@ -124,11 +124,24 @@ const Footer = () => {
         </div>
         <div className="flex gap-[2.5rem]">
           <div className="flex flex-col gap-[0.3rem] text-[15px] font-medium text-white">
-            <h1>PAPEL FAQs</h1>
-            <h1>INVESTORS</h1>
-            <h1>PRIVACY POLICY</h1>
-            <h1>TERMS OF USE</h1>
+            <Link href="/soon">
+              <h1>INVESTORS</h1>
+            </Link>
+            <Link href="/terms">
+              <h1>TERMS OF USE</h1>
+            </Link>
+            <Link href="/privacy">
+              <h1>PRIVACY POLICY</h1>
+            </Link>
+            <Link href="/shipping">
+              <h1>SHIPPING POLICY</h1>
+            </Link>
+            <Link href="/return">
+              <h1>RETURN & REFUND</h1>
+            </Link>
+            {/* <Link href="#">
             <h1>CONTACT US</h1>
+          </Link> */}
           </div>
           <div className="flex flex-col">
             <h1 className="font-medium text-[16px] text-white">Payment</h1>
