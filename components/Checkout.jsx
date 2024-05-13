@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useCart } from "@/Hooks/use-cart";
-import { cn, formatPrice } from "@/lib/utils";
+import { useCart } from "../Hooks/use-cart";
+import { cn, formatPrice } from "../lib/utils";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { X, Loader2 } from "lucide-react";
@@ -11,7 +11,7 @@ import Quantity from "./Quantity";
 import { SHA256 } from "crypto-js";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import saveOrder from "@/Hooks/save-order";
+import saveOrder from "../Hooks/save-order";
 
 const Checkout = () => {
   const { items, removeItem } = useCart();

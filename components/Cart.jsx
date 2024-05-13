@@ -9,10 +9,10 @@ import {
 } from "./ui/sheet";
 import { FaCartShopping } from "react-icons/fa6";
 import { Separator } from "./ui/separator";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice } from "../lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import { useCart } from "@/Hooks/use-cart";
+import { useCart } from "../Hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
 

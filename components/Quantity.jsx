@@ -5,9 +5,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../components/ui/select";
 import { ScrollArea } from "./ui/scroll-area";
-import { useCart } from "@/Hooks/use-cart";
+import { useCart } from "../Hooks/use-cart";
 
 const Quantity = ({ item }) => {
   const { changeQuantity } = useCart();

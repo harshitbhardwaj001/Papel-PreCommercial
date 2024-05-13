@@ -1,6 +1,6 @@
 "use client";
 
-import { useCart } from "@/Hooks/use-cart";
+import { useCart } from "../Hooks/use-cart";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useToast } from "./ui/use-toast";

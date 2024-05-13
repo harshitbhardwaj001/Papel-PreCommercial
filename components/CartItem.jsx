@@ -1,5 +1,5 @@
-import { useCart } from "@/Hooks/use-cart";
-import { formatPrice } from "@/lib/utils";
+import { useCart } from "../Hooks/use-cart";
+import { formatPrice } from "../lib/utils";
 import { X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
