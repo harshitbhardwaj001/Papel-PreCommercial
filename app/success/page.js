@@ -1,7 +1,6 @@
 "use client";
-import saveOrder from "@/Hooks/save-order";
-import { useCart } from "@/Hooks/use-cart";
-import Head from "next/head";
+import saveOrder from "../../Hooks/save-order";
+import { useCart } from "../../Hooks/use-cart";
 import Link from "next/link";
 import { useEffect } from "react";
 // import { post } from "../api/orders/route";

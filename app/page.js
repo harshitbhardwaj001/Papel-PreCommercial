@@ -1,9 +1,9 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import HeroBanner from "@/components/HeroBanner";
-import Navbar from "@/components/Navbar";
-import Products from "@/components/Products";
+import Footer from "../components/Footer";
+import HeroBanner from "../components/HeroBanner";
+import Navbar from "../components/Navbar";
+import Products from "../components/Products";
 
 import React from "react";
 
