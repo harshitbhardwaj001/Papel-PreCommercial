@@ -1,8 +1,8 @@
 "use client";
 
 import saveOrder from "../../Hooks/save-order";
-import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Failure() {
   const { clearOrder } = saveOrder();
