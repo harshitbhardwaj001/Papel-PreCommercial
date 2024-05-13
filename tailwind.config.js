@@ -16,6 +16,12 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      gilroybold: ["Gilroy-Bold", "sans-serif"],
+      gilroyregular: ["Gilroy-Regular", "sans-serif"],
+      gilroymedium: ["Gilroy-Medium", "sans-serif"],
+      gilroyboldx: ["Gilroy-ExtraBold", "sans-serif"],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",

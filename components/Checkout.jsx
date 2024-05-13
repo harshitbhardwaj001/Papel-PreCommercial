@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useCart } from "@/Hooks/use-cart";
 import { cn, formatPrice } from "@/lib/utils";
 import Image from "next/image";
@@ -8,15 +8,126 @@ import { Button } from "./ui/button";
 import { X, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Quantity from "./Quantity";
-// import Trash from "@/components/icons/Trash";
+import { SHA256 } from "crypto-js";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+import saveOrder from "@/Hooks/save-order";
 
 const Checkout = () => {
   const { items, removeItem } = useCart();
+  const { addOrder, orderFinal } = saveOrder();
   const cartTotal = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
   const fee = items.reduce((acc, item) => acc + item.shipping, 0);
+  console.log(fee);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    postalCode: 0,
+    country: "",
+    details: items,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const makePayment = async (e) => {
+    e.preventDefault();
+
+    if (
+      formData.address &&
+      formData.city &&
+      formData.country &&
+      formData.email &&
+      formData.name &&
+      formData.phone &&
+      formData.postalCode
+    ) {
+      const transactionId = "MT-" + uuidv4().toString(36).slice(-6);
+
+      addOrder(formData);
+
+      console.log(orderFinal);
+      const payload = {
+        merchantId: process.env.NEXT_PUBLIC_MERCHANT_ID,
+        merchantTransactionId: transactionId,
+        merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
+        amount: (cartTotal + fee) * 100,
+        redirectUrl: `https://www.papelwater.in/success`,
+        redirectMode: "POST",
+        callbackUrl: `https://www.papelwater.in/failure`,
+        mobileNumber: "9999999999",
+        paymentInstrument: {
+          type: "PAY_PAGE",
+        },
+      };
+
+      const dataPayload = JSON.stringify(payload);
+      const database64 = Buffer.from(dataPayload).toString("base64");
+      console.log(database64);
+
+      const fullURL =
+        database64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
+      const datasha256 = SHA256(fullURL);
+      const checkSum = datasha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
+
+      // const UAT_PAY_API_URL =
+      //   "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
+      const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes";
+
+      const maxRetries = 3;
+      let retryCount = 0;
+
+      while (retryCount < maxRetries) {
+        try {
+          const response = await axios.post(
+            UAT_PAY_API_URL,
+            { request: database64 },
+            {
+              headers: {
+                accept: "application/json",
+                "Content-Type": "application/json",
+                "X-VERIFY": checkSum,
+              },
+            }
+          );
+
+          console.log("Payment successful:", response.data);
+          const url = response.data.data.instrumentResponse.redirectInfo.url;
+          window.location.href = url;
+        } catch (error) {
+          if (error.response && error.response.status === 429) {
+            // Rate limit exceeded, retry after exponential backoff
+            const waitTime = Math.pow(2, retryCount) * 1000; // Exponential backoff
+            console.log(
+              `Rate limit exceeded, retrying after ${waitTime} ms...`
+            );
+            await new Promise((resolve) => setTimeout(resolve, waitTime));
+            retryCount++;
+          } else {
+            // Handle other errors
+            console.error("Error making payment:", error);
+            // Throw or handle the error accordingly
+            throw error;
+          }
+        }
+      }
+
+      // If all retries fail, throw an error or handle accordingly
+      throw new Error("Exceeded maximum retries, payment failed.");
+    } else {
+      // Handle validation errors
+      console.error("Validation error:", validationErrors);
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -135,16 +246,18 @@ const Checkout = () => {
                   Enter Your Details
                 </p>
               </div>
-              <form className="max-w-md mx-auto pb-[3rem]">
+              <form className="max-w-md mx-auto pb-[1rem]">
                 <div className="flex gap-2">
-                  <div className="mb-4 ">
+                  <div className="mb-4">
                     <input
                       type="text"
                       id="name"
                       name="name"
                       placeholder="Name"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.name}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div className="mb-4">
@@ -154,7 +267,9 @@ const Checkout = () => {
                       name="email"
                       placeholder="Email"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.email}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -165,7 +280,9 @@ const Checkout = () => {
                     name="phone"
                     placeholder="Phone Number"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    className="w-full px-4 py-2 border border-gray-300 rounded"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="mb-4">
@@ -175,50 +292,60 @@ const Checkout = () => {
                     name="address"
                     placeholder="Street Address"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                    className="w-full px-4 py-2 border border-gray-300 rounded"
+                    value={formData.address}
+                    onChange={handleInputChange}
                   />
                 </div>
-                <div className="flex gap-2">
-                  <div className="mb-4">
+                <div className="flex mb-4">
+                  <div className="w-1/2 mr-2">
                     <input
                       type="text"
                       id="city"
                       name="city"
                       placeholder="City"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.city}
+                      onChange={handleInputChange}
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="w-1/2 ml-2">
                     <input
                       type="text"
                       id="state"
                       name="state"
                       placeholder="State"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.state}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="mb-4">
+                <div className="flex mb-4">
+                  <div className="w-1/2 mr-2">
                     <input
-                      type="text"
+                      type="number"
                       id="postalCode"
                       name="postalCode"
                       placeholder="Postal Code"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.postalCode}
+                      onChange={handleInputChange}
                     />
                   </div>
-                  <div className="mb-4">
+                  <div className="w-1/2 ml-2">
                     <input
                       type="text"
                       id="country"
                       name="country"
                       placeholder="Country"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-[0.5rem]"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      value={formData.country}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -259,6 +386,7 @@ const Checkout = () => {
                   <button
                     className="w-full bg-[#1B3C87] px-[1.5rem] py-[.5rem] rounded-[.5rem] text-white font-semibold"
                     size="lg"
+                    onClick={(e) => makePayment(e)}
                   >
                     Place Order
                   </button>
