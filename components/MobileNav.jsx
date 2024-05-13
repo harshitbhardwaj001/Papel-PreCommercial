@@ -7,10 +7,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "../components/ui/sheet";
 import Hamburger from "hamburger-react";
 import Image from "next/image";
-import { Separator } from "./ui/separator";
 
 const MobileNav = () => {
   return (

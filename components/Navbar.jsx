@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
-import { FaCartShopping } from "react-icons/fa6";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
