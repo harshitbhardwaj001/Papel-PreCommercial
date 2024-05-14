@@ -64,15 +64,19 @@ const Checkout = () => {
         redirectUrl: `https://www.papelwater.in/success`,
         redirectMode: "POST",
         callbackUrl: `https://www.papelwater.in/failure`,
-        mobileNumber: "9999999999",
+        mobileNumber: formData.phone,
         paymentInstrument: {
           type: "PAY_PAGE",
         },
       };
 
+      console.log(payload);
+
       const dataPayload = JSON.stringify(payload);
       const database64 = Buffer.from(dataPayload).toString("base64");
       console.log(database64);
+      console.log(process.env.NEXT_PUBLIC_SALT_KEY);
+      console.log(process.env.NEXT_PUBLIC_SALT_INDEX);
 
       const fullURL =
         database64 + "/pg/v3/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
