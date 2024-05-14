@@ -75,13 +75,13 @@ const Checkout = () => {
       console.log(database64);
 
       const fullURL =
-        database64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
+        database64 + "/pg/v3/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
       const datasha256 = SHA256(fullURL);
       const checkSum = datasha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
 
       // const UAT_PAY_API_URL =
       //   "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
-      const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v1/pay";
+      const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v3/pay";
 
       const maxRetries = 3;
       let retryCount = 0;
