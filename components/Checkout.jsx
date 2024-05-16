@@ -70,60 +70,81 @@ const Checkout = () => {
         },
       };
 
-      console.log(payload);
+      // console.log(payload);
 
       const dataPayload = JSON.stringify(payload);
       const database64 = Buffer.from(dataPayload).toString("base64");
-      console.log(database64);
-      console.log(process.env.NEXT_PUBLIC_SALT_KEY);
-      console.log(process.env.NEXT_PUBLIC_SALT_INDEX);
+      // console.log(database64);
+      // console.log(process.env.NEXT_PUBLIC_SALT_KEY);
+      // console.log(process.env.NEXT_PUBLIC_SALT_INDEX);
 
       const fullURL =
-        database64 + "/pg/v3/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
+        database64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
       const datasha256 = SHA256(fullURL);
       const checkSum = datasha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
 
       // const UAT_PAY_API_URL =
       //   "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
-      const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v3/pay";
+      // const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v3/pay";
 
       const maxRetries = 3;
       let retryCount = 0;
 
-      while (retryCount < maxRetries) {
-        try {
-          const response = await axios.post(
-            UAT_PAY_API_URL,
-            { request: database64 },
-            {
-              headers: {
-                accept: "application/json",
-                "Content-Type": "application/json",
-                "X-VERIFY": checkSum,
-              },
-            }
-          );
+      // while (retryCount < maxRetries) {
+      try {
+        // const response = await axios.post(
+        //   UAT_PAY_API_URL,
+        //   { request: database64 },
+        //   {
+        //     headers: {
+        //       accept: "application/json",
+        //       "Content-Type": "application/json",
+        //       "X-VERIFY": checkSum,
+        //     },
+        //   }
+        // );
 
-          console.log("Payment successful:", response.data);
-          const url = response.data.data.instrumentResponse.redirectInfo.url;
-          window.location.href = url;
-        } catch (error) {
-          if (error.response && error.response.status === 429) {
-            // Rate limit exceeded, retry after exponential backoff
-            const waitTime = Math.pow(2, retryCount) * 1000; // Exponential backoff
-            console.log(
-              `Rate limit exceeded, retrying after ${waitTime} ms...`
-            );
-            await new Promise((resolve) => setTimeout(resolve, waitTime));
-            retryCount++;
-          } else {
-            // Handle other errors
-            console.error("Error making payment:", error);
-            // Throw or handle the error accordingly
-            throw error;
-          }
+        const response = await fetch("/api/payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            payload: database64,
+            checksum: checkSum,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
+        const responseData = await response.json();
+        console.log("Payment successful:", responseData);
+
+        const url = responseData.data.instrumentResponse.redirectInfo.url;
+        window.location.href = url;
+      } catch (error) {
+        // if (error.response && error.response.status === 429) {
+        //   // Rate limit exceeded, retry after exponential backoff
+        //   const waitTime = Math.pow(2, retryCount) * 1000; // Exponential backoff
+        //   console.log(
+        //     `Rate limit exceeded, retrying after ${waitTime} ms...`
+        //   );
+        //   await new Promise((resolve) => setTimeout(resolve, waitTime));
+        //   // retryCount++;
+        // } else {
+        //   // // Handle other errors
+        //   // console.error("Error making payment:", error);
+        //   // // Throw or handle the error accordingly
+        //   // throw error;
+        // }
+        // Handle other errors
+        console.error("Error making payment:", error);
+        // Throw or handle the error accordingly
+        throw error;
       }
+      // }
 
       // If all retries fail, throw an error or handle accordingly
       throw new Error("Exceeded maximum retries, payment failed.");
