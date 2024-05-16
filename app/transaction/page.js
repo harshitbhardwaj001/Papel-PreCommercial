@@ -40,7 +40,7 @@ async function post(order) {
   }
 }
 
-export default function Success() {
+export default function Transaction() {
   const { clearCart } = useCart();
   const { clearOrder, orderFinal } = saveOrder();
   const saveOrderToDb = async () => {

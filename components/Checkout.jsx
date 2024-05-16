@@ -10,7 +10,6 @@ import Link from "next/link";
 import Quantity from "./Quantity";
 import { SHA256 } from "crypto-js";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
 import saveOrder from "../Hooks/save-order";
 
 const Checkout = () => {
@@ -61,9 +60,9 @@ const Checkout = () => {
         merchantTransactionId: transactionId,
         merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
         amount: (cartTotal + fee) * 100,
-        redirectUrl: `https://www.papelwater.in/success`,
+        redirectUrl: `https://www.papelwater.in/transaction/${transactionId}`,
         redirectMode: "POST",
-        callbackUrl: `https://www.papelwater.in/failure`,
+        callbackUrl: `https://www.papelwater.in/transaction/${transactionId}`,
         mobileNumber: formData.phone,
         paymentInstrument: {
           type: "PAY_PAGE",
