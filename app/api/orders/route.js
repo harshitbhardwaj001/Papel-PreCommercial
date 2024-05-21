@@ -49,20 +49,20 @@ export async function POST(request) {
 
 export async function GET(request) {
   if (request.method !== "GET") {
-    return NextResponse.json({ message: "Method Not Allowed" }).status(405);
+    return NextResponse.json(
+      { message: "Method Not Allowed" },
+      { status: 405 }
+    );
   }
 
   try {
-    const { page, pageSize } = request.json();
     const orders = await prisma.order.findMany({
       orderBy: { createdAt: "desc" },
-      skip: (page - 1) * pageSize,
-      take: pageSize,
     });
 
-    return NextResponse.json({ orders }).status(200);
+    return NextResponse.json({ orders }, { status: 200 });
   } catch (error) {
     console.error("Error fetching orders:", error);
-    return NextResponse.error("Failed to fetch orders").status(500);
+    return NextResponse.error("Failed to fetch orders", { status: 500 });
   }
 }

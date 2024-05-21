@@ -60,9 +60,9 @@ const Checkout = () => {
         merchantTransactionId: transactionId,
         merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
         amount: (cartTotal + fee) * 100,
-        redirectUrl: `https://www.papelwater.in/transaction/${transactionId}`,
-        redirectMode: "POST",
-        callbackUrl: `https://www.papelwater.in/transaction/${transactionId}`,
+        redirectUrl: `https://www.papelwater.in/transaction/`,
+        redirectMode: "REDIRECT",
+        callbackUrl: `https://www.papelwater.in/transaction/`,
         mobileNumber: formData.phone,
         paymentInstrument: {
           type: "PAY_PAGE",
