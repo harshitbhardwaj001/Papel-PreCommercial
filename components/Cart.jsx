@@ -29,10 +29,17 @@ const Cart = () => {
   return (
     <Sheet className="w-[80vw]">
       <SheetTrigger className="group -m-2 flex items-center p-2">
-        <FaCartShopping
-          size={28}
-          className="flex-shrink-0 xs:max-md:w-[20px]"
-        />
+        <div className="relative">
+          {items.length > 0 && (
+            <div className="bg-[#1B3C87] w-[20px] h-[20px] rounded-full absolute top-[-5px] right-[-5px] flex justify-center items-center font-gilroymedium text-[10px] text-center text-white">
+              {items.length}
+            </div>
+          )}
+          <FaCartShopping
+            size={28}
+            className="flex-shrink-0 xs:max-md:w-[20px]"
+          />
+        </div>
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-white">
         <SheetHeader className="space-y-2.5 pr-6">

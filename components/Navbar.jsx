@@ -6,9 +6,11 @@ import Hamburger from "hamburger-react";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
+import { useCart } from "@/Hooks/use-cart";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const { items } = useCart();
   return (
     <>
       {/* Desktop Navbar */}
@@ -55,6 +57,7 @@ const Navbar = () => {
           <div className="corner-right flex gap-[3.5rem] items-center ml-[-2rem] xs:max-xl:hidden">
             <Hamburger toggled={isOpen} toggle={setOpen} />
             {/* <FaCartShopping size={28} className="" /> */}
+
             <Cart />
           </div>
         </div>
