@@ -3,7 +3,8 @@ import Navbar from "../../components/Navbar";
 import Orders from "../../components/Orders";
 import React from "react";
 
-const page = () => {
+
+const page = async () => {
   return (
     <>
       <div className="xs:max-md:ml-0">
