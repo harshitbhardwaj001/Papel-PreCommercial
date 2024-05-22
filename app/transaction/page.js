@@ -3,6 +3,7 @@ import saveOrder from "../../Hooks/save-order";
 import { useCart } from "../../Hooks/use-cart";
 import Link from "next/link";
 import { useEffect } from "react";
+import { SHA256 } from "crypto-js";
 // import { post } from "../api/orders/route";
 
 // async function orderToDb(order) {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useCart } from "../Hooks/use-cart";
 import { cn, formatPrice } from "../lib/utils";
 import Image from "next/image";
@@ -10,7 +10,7 @@ import Link from "next/link";
 import Quantity from "./Quantity";
 import { SHA256 } from "crypto-js";
 import { v4 as uuidv4 } from "uuid";
-import saveOrder from "../Hooks/save-order";
+import saveOrder from "@/Hooks/save-order";
 
 const Checkout = () => {
   const { items, removeItem } = useCart();
@@ -60,9 +60,9 @@ const Checkout = () => {
         merchantTransactionId: transactionId,
         merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
         amount: (cartTotal + fee) * 100,
-        redirectUrl: `https://www.papelwater.in/transaction/`,
-        redirectMode: "REDIRECT",
-        callbackUrl: `https://www.papelwater.in/transaction/`,
+        redirectUrl: `https://www.papelwater.in/api/status/${transactionId}`,
+        redirectMode: "POST",
+        callbackUrl: `https://www.papelwater.in/api/status/${transactionId}`,
         mobileNumber: formData.phone,
         paymentInstrument: {
           type: "PAY_PAGE",
@@ -85,9 +85,6 @@ const Checkout = () => {
       // const UAT_PAY_API_URL =
       //   "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
       // const UAT_PAY_API_URL = "https://api.phonepe.com/apis/hermes/pg/v3/pay";
-
-      const maxRetries = 3;
-      let retryCount = 0;
 
       // while (retryCount < maxRetries) {
       try {
